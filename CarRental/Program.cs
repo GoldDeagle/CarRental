@@ -66,8 +66,52 @@
                 }
 
             }
+
         }
 
-        
+        static void LoginMenu()
+        {
+            if (authenticatedCustomer == null)
+                // checks if customer is already logged in 
+            {
+                // user enters username and stores it
+                Console.Write("Enter your username: ");
+                string username = Console.ReadLine();
+
+                Console.Write("Enter your password: ");
+                string password = Console.ReadLine();
+                // user enters the password and stores it 
+
+                authenticatedCustomer = customers.Authenticate(username, password);
+                // authenticates the user's input 
+
+                if (authenticatedCustomer != null)
+                    // checks if the authentication is correct
+                {
+                    Console.WriteLine($"Welcome {authenticatedCustomer.FirstName}");
+                    // user is entered in the system
+                }
+                else
+                {
+                    Console.WriteLine("Invalid username or password");
+                    // if not found or invalid, then prompt error message
+                }
+            }
+            else
+            {
+                Console.WriteLine($"You are already logged in as {authenticatedCustomer.Username}");
+                // prompt user to let them know they are already logged in if they attempt to log in again
+            }
+        }
+
+        static void LogoutMenu()
+        {
+            authenticatedCustomer = null;
+            // sets the customer to null
+            Console.WriteLine("Logged out");
+            // then inform them they are now logged out
+        }
+
+
     }
 }
