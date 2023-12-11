@@ -43,6 +43,17 @@
                 Birthdate = "03-18-2002"
                 // details needed to input for user to sign up or login
             };
+            var c3 = new Customer
+            // create customer object
+            {
+                FirstName = "Jayden",
+                LastName = "Rajpurkar",
+                username = "jraj0925",
+                password = "8822",
+                DriversLicenseID = "H923-3829-2245",
+                Birthdate = "09-25-2002"
+                // details needed to input for user to sign up or login
+            };
 
             var v1 = new Vehicle
             // create vehicle object
@@ -77,11 +88,13 @@
 
             var cv1 = new RequestLog(c1, v1);
             var cv2 = new RequestLog(c2, v2);
+            var cv3 = new RequestLog(c3, v3);
             // request log entry created which links customers and vehicles 
 
             customerauthentication = new CustomerAuthentication();
             customerauthentication.customerauthentication.Add(c1);
             customerauthentication.customerauthentication.Add(c2);
+            customerauthentication.customerauthentication.Add(c3);
             // created customers gets authenticated and added to the list
 
             vehicles = new List<Vehicle>();
@@ -95,6 +108,7 @@
             // initialize request log list
             requestLogs.Add(cv1);
             requestLogs.Add(cv2);
+            requestLogs.Add(cv3);
             // add the created objects to the lists
 
 
