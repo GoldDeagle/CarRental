@@ -125,7 +125,7 @@
             while (!done)
                 // keep looping until user wants to quit explicitly 
             {
-                Console.WriteLine("Options: Login: Press 1 ----- Logout: Press 2 ----- Sign Up: Press 3 ----- Vehicle List: Press 4 ----- Clear Screen: c ----- Quit: q -----");
+                Console.WriteLine("Options: Login: Press 1 ----- Logout: Press 2 ----- Sign Up: Press 3 ----- Active Request Rate: Press 4 ----- Clear Screen: c ----- Quit: q -----");
                 // show the menu options to the user
                 Console.Write("Choice: ");
                 string choice = Console.ReadLine();
@@ -180,8 +180,10 @@
                 Console.Write("Enter your password: ");
                 string password = Console.ReadLine();
                 // user enters the password and stores it 
+                Console.WriteLine("Enter Drivers License ID");
+                string DriversLicenseID = Console.ReadLine();
 
-                authenticatedCustomer = customerauthentication.Authenticate(username, password);
+                authenticatedCustomer = customerauthentication.Authenticate(username, password, DriversLicenseID);
                 // authenticates the user's input 
 
                 if (authenticatedCustomer != null)
@@ -224,6 +226,7 @@
             Console.WriteLine("Birthdate (Format is 00/00/0000)");//writeline requesting customer birthdate
             string Birthdate = Console.ReadLine(); // sets user input as birthdate
             Console.WriteLine("Drivers License ID (for background check purposes)");//Writeline requesting customer Drivers License ID 
+            Console.WriteLine("Enter Drivers License format as X000-0000-0000");
             string DriversLicenseID = Console.ReadLine();
             var newCustomer = new Customer // Creating a new instance of the Customer class to represent a new customer
             {
