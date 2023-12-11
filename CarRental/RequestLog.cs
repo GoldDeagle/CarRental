@@ -12,17 +12,17 @@ namespace CarRental
         public Customer customer { get; set; }
         // customer property gets and obtains the associated information about customer
 
-
         public Vehicle vehicle { get; set; }
         // vehicle property gets and obtains the associated information about customer
-    }
 
-    public RequestLog(Customer c, Vehicle v)
+        public RequestLog(Customer c, Vehicle v)
         // public constructor 'c' and 'v' parameters intializing the info with vehicle and customer
-    {
-        customer = c;
-        vehicle = v;
-        // sets the associated objects with the properties of customer and vehicle
+        {
+            customer = c;
+            vehicle = v;
+            // sets the associated objects with the properties of customer and vehicle
+        }
+
     }
 
 }

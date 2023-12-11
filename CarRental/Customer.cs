@@ -21,7 +21,7 @@ public class Customer
     public string LastName { get; set; }
     //customer property field for last name
     //uses getter and setter to get last name and set last name value
-    public string UserName { get; set; }
+    public string username { get; set; }
     //customer property field for username
     //uses getter and setter to get username and set username value
     public string password {  get; set; }
